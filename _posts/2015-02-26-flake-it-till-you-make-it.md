@@ -12,9 +12,32 @@ The truth is that no one else can definitively know the path we are here to walk
 `
 printf(Hello World);
 `
-```sql
 
-select * from data.base
+```javascript
+
+def import_path(fullpath):
+    """
+    Import a file with full path specification. Allows one to
+    import from anywhere, something __import__ does not do.
+    """
+    path, filename = os.path.split(fullpath)
+    filename, ext = os.path.splitext(filename)
+    sys.path.insert(0, path)
+    module = __import__(filename)
+    reload(module)  # Might be out of date
+    del sys.path[0]
+    return module
+#userSettings = import_path('C:\\Users\\tchademirel\\Downloads\\sample-market-maker-master\\market_maker\\settings.py')
+g=os.path.join('..', 'settings')
+userSettings = import_path(g)
+symbolSettings = None
+symbol = sys.argv[1] if len(sys.argv) > 1 else None
+if symbol:
+    print("Importing symbol settings for %s..." % symbol)
+    try:
+        symbolSettings = import_path(os.path.join('..', 'settings-%s' % symbol))
+    except Exception as e:
+        print("Unable to find settings-%s.py." % symbol)
 
 ```
 At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.  
