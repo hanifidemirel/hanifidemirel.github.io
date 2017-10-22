@@ -12,7 +12,7 @@ The truth is that no one else can definitively know the path we are here to walk
 `
 printf(Hello World);
 `
-```c
+```javascript
 
 def import_path(fullpath):
     """
