@@ -1,9 +1,8 @@
 ---
 layout: post
 published: true
-title: Untitled
+title: Oracle Transactions Notes I
 ---
-## A New Post
 
 
 Transactions take database from one consistent state to another. When committed, the database will be in either of these states for sure. Transactions in Oracle provide these ACID properties.
