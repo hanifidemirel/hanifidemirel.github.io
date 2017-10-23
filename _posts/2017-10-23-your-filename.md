@@ -1,7 +1,7 @@
 ---
 layout: post
-published: false
-title: ''
+published: true
+title: Untitled
 ---
 ## A New Post
 
@@ -37,13 +37,4 @@ The trigger that fired by second insert will also be rolled back.
      `when others...." (exception handler)`
     
      
-     c. Transaction Level Atomicity: 
-
-     
-     
-     
-     
-     
-     
-     
-     
+     c. Transaction Level Atomicity:
