@@ -37,6 +37,7 @@ Tabloyu oluştururken "initially immediate" diye belirttiğimiz için kısıtlam
 
 ```javascript
 update parent set pk = 2;
+
 ```
 
 `update parent set pk = 2`
