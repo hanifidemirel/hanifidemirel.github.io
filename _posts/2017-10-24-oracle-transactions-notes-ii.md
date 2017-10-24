@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: Oracle Transactions Notes II
+date: '2017-10-21'
 ---
 
 ## DDL and Atomicity
