@@ -84,8 +84,4 @@ ops$tkyte%ORA11GR2> commit;
 Commit complete.
 ```
 
-Bu özelliğin çalışabilmesi için ilgili kısıtlamanın en başta "**DEFERRABLE**" olarak belirtilmesi gerektiği unutulmamalı. Ancak ne olur ne olmaz diye de tüm kısıtlamalar**DEFERRABLE INITIALLY IMMEDIATE** olarak yazılmamalı. Aksi halde ilgili kolon için Oracle'ın indeksleme yöntemi değişeceğinden performans sorununa yol açacaktır.
-
-
-
-
+Bu özelliğin çalışabilmesi için ilgili kısıtlamanın en başta "**DEFERRABLE**" olarak belirtilmesi gerektiği unutulmamalı. Ancak ne olur ne olmaz diye de tüm kısıtlamalar "**DEFERRABLE INITIALLY IMMEDIATE**" olarak yazılmamalı. Aksi halde ilgili kolon için Oracle'ın indeksleme yöntemi değişeceğinden performans sorununa yol açacaktır.
