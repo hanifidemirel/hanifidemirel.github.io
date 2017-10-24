@@ -7,10 +7,12 @@ title: Oracle Transactions Notes I
 
 Transactions take database from one consistent state to another. When committed, the database will be in either of these states for sure. Transactions in Oracle provide these ACID properties.
 
--Atomicity: Either all of a transaction happens or nothing happens.
--Consistency: Transactions take database from one consistent state to another.
--Isolotion: Effects of a transaction may not be visible to others till committed.
--Durability: Once committed, it is permanent.
+- Atomicity: Either all of a transaction happens or nothing happens.
+- Consistency: Transactions take database from one consistent state to another.
+- Isolotion: Effects of a transaction may not be visible to others till committed.
+- Durability: Once committed, it is permanent.
+
+
 
 !! Always explicitly "commit" or "rollback" trannsaction while terminating.
 
