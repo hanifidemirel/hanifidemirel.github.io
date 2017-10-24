@@ -39,4 +39,4 @@ The trigger that fired by second insert will also be rolled back.
      
 `when others...." (exception handler)`
     
-   c- Transaction Level Atomicity: 
+   c- Transaction Level Atomicity:
