@@ -30,10 +30,9 @@ If error then rollback to statement2;
 ```
 
 The trigger that fired by second insert will also be rolled back.
-	
-     b. Procedure Level Atomicity: Oracle considers PL/SQL anonymous blocks to be statement as well. Oracle treats stored procedure call as an atomic statement! But there should not be:
+
+   b.Procedure Level Atomicity: Oracle considers PL/SQL anonymous blocks to be statement as well. Oracle treats stored procedure call as an atomic statement! But there should not be:
      
 `when others...." (exception handler)`
     
-     
-     c. Transaction Level Atomicity:
+   c.Transaction Level Atomicity:
