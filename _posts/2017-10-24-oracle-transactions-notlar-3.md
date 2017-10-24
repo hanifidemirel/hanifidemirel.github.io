@@ -45,3 +45,29 @@ update parent set pk = 2;
 `ERROR at line 1:`
 `ORA-02292: integrity constraint (OPS$TKYTE.CHILD_FK_PARENT) violated - child`
 `record found`
+
+
+Şu şekilde değiştirirsek kontrol etmesini erteleyebiliriz.
+
+
+```javascript
+set constraint child_fk_parent deferred;
+```
+
+```javascript
+	update parent set pk = 2;
+1 row updated.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
