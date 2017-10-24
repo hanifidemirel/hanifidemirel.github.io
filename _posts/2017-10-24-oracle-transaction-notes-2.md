@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Oracle Transaction Notes 2
 ---
 
