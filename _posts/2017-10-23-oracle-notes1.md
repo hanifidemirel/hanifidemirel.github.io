@@ -18,7 +18,7 @@ Transactions take database from one consistent state to another. When committed,
 
 "rollback to <savepoint>" : Creates a marked point within a transaction.
   
- ## 1. Atomicity ##
+  **1. Atomicity**
  
    a- Statement Level Atomicity: Oracle silently wraps a <savepoint> around each call to database.
   
