@@ -15,7 +15,7 @@ Oracle 8.0'dan itibaren kısıtlamalar(constraint) ertelenebilme(deferrable) öz
 _Table created._
 
 
-```
+```javascript
 1 create table child
 2 ( fk constraint child_fk_parent
 3 references parent(pk)
@@ -37,8 +37,8 @@ Tabloyu oluştururken "initially immediate" diye belirttiğimiz için kısıtlam
 
 `update parent set pk = 2;`
 
-**update parent set pk = 2
+`update parent set pk = 2
 
 ERROR at line 1:
 ORA-02292: integrity constraint (OPS$TKYTE.CHILD_FK_PARENT) violated - child
-record found**
+record found`
