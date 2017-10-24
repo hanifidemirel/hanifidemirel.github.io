@@ -35,10 +35,10 @@ insert into child values ( 1 );
 Tabloyu oluştururken "initially immediate" diye belirttiğimiz için kısıtlama kontrolü hemen yapılacak ve aşağıdaki statement hata verecektir.
 
 
-`update parent set pk = 2;`
+```update parent set pk = 2;```
 
-`update parent set pk = 2
+`update parent set pk = 2`
 
-ERROR at line 1:
-ORA-02292: integrity constraint (OPS$TKYTE.CHILD_FK_PARENT) violated - child
-record found`
+`ERROR at line 1:`
+`ORA-02292: integrity constraint (OPS$TKYTE.CHILD_FK_PARENT) violated - child`
+`record found`
