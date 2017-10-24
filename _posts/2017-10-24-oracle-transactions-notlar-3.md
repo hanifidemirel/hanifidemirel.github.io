@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: Oracle Transactions Notları 3
+date: '2017-10-24'
 ---
 ## Deferrable Constraint ve Cascading Update
 
