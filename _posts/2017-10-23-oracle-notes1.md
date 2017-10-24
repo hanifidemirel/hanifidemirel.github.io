@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: Oracle Transactions Notes I
+date: '2017-10-20'
 ---
 
 
