@@ -60,11 +60,29 @@ set constraint child_fk_parent deferred;
 ```
 
 
+Bu aşamadan sonra tekrar kısıtlamanın ihlal edilip edilmediğini kontrol ettirmek için eski haline döndürmeliyiz.
+
+```javascript
+ops$tkyte%ORA11GR2> set constraint child_fk_parent immediate;
+set constraint child_fk_parent immediate
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (OPS$TKYTE.CHILD_FK_PARENT) violated - parent
+key not found
+```
 
 
+Kural ihlali hatası veriyor. Düzeltip tekrar denediğimizde commit edebileceğiz.
 
+```javascript
+ops$tkyte%ORA11GR2> update child set fk = 2;
+1 row updated.
 
-
+ops$tkyte%ORA11GR2> set constraint child_fk_parent immediate;
+Constraint set.
+ops$tkyte%ORA11GR2> commit;
+Commit complete.
+```
 
 
 
