@@ -35,7 +35,8 @@ insert into child values ( 1 );
 Tabloyu oluştururken "initially immediate" diye belirttiğimiz için kısıtlama kontrolü hemen yapılacak ve aşağıdaki statement hata verecektir.
 
 
-```update parent set pk = 2;```
+```javascript
+update parent set pk = 2;```
 
 `update parent set pk = 2`
 
