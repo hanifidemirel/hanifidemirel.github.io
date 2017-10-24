@@ -16,9 +16,9 @@ Transactions take database from one consistent state to another. When committed,
 
 "rollback to <savepoint>" : Creates a marked point within a transaction.
   
-  1. Atomicity
+ ## 1. Atomicity
  
- 	a. Statement Level Atomicity: Oracle silently wraps a <savepoint> around each call to database.
+ 	### a. Statement Level Atomicity: Oracle silently wraps a <savepoint> around each call to database.
   
   ```javascript
 Savepoint statement1;
@@ -31,8 +31,9 @@ If error then rollback to statement2;
 
 The trigger that fired by second insert will also be rolled back.
 
-   b.Procedure Level Atomicity: Oracle considers PL/SQL anonymous blocks to be statement as well. Oracle treats stored procedure call as an atomic statement! But there should not be:
+   ### b.Procedure Level Atomicity: 
+   Oracle considers PL/SQL anonymous blocks to be statement as well. Oracle treats stored procedure call as an atomic statement! But there should not be:
      
 `when others...." (exception handler)`
     
-   c.Transaction Level Atomicity:
+   ### c.Transaction Level Atomicity:
