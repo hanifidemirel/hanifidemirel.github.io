@@ -13,6 +13,8 @@ Partitioning, Oracle'da böl ve fethet mantığıyla çalışan, büyük tablola
 - Bazı scriptlerde performans artışı: Özellikle veri ambarlarında önemli hız artışı sağlar zira geniş bir aralıktaki veriyi hiç erişmeye gerek kalmadan eleme imkanı sağlıyor.
 Bunları biraz daha ayrıntılı inceleyelim şimdi.
 
+
+
   **1. Erişilebilirlik**
 
    Eğer üzerinde çalışılan tabloda partitioning yapılmışsa, tablo üzerinde herhangi bir sorgu çalıştırılırken optimizasyon mekanizması bunu anlar ve erişilmesine gerek
