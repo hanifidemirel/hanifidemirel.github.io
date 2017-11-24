@@ -6,7 +6,7 @@ date: '2017-11-24'
 ---
 ## Genel Bakış
 
-Partitioning, Oracle'da böl ve fethet mantığıyla çalışan, büyük tabloların ve indeksleri yönetimini kolaylaştıran bir mekanizmadır. Gelen veriyi belli kurallar çerçevesinde farklı partisyonlarda tutmayı sağlar. Bu mekanizmanın faydaları:
+Partitioning, Oracle'da böl ve fethet mantığıyla çalışan, büyük tabloları ve indeksleri küçük parçalar halinde saklayarak veri yönetimini kolaylaştıran bir mekanizmadır. Gelen veriyi belli kurallar çerçevesinde farklı partisyonlarda tutmayı sağlar. Bu mekanizmanın faydaları:
 
 - Veriye hızlı erişim: OLTP, veri ambarı..vs tüm sistemler için geçerli bir avantaj
 - Büyük miktarda veri kümesiyle yapılan işlemler(bulk) kolaylaşır. Zira 100GB lık bir tabloyu güncellemek aynı işlemi 10GB lık 10 tane tabloda yapmaktan daha az efor gerektirir.
@@ -40,6 +40,14 @@ kısaca şu kadar:
    2 türlü iyileştirme sağlanabilir: Partisyon eleme ve paralel çalıştırma ancak bu iyileştirmeler sistemden sisteme değişkenlik gösterir.OLTP sistemlerde partitioning büyük performans artışları sağlamadığı gibi bazen negatif etki de yapabilir. Geleneksel OLTP sistemlerinde sonuçların anlık olarak dönmesi    beklenir ve geri dönen değerler oldukça küçük indeks aralıklarından taranarak getirilmiştir. Büyük objelerde full scan yapılmadığı için partisyon anlamsızlaşıyor.(partisyon büyük parçaların full scan yapılmasını gereksiz kılıyordu) Partisyonların paralel çalıştırma avantajı da burada geçersiz çünkü oltp sistemlerde kaynaklar başka işler için saklanmalı. Ayrıca zaten hızlı indeks erişimleri sorguyu hızlıca döndürecek şekilde tasarlanmıştır OLTP'de.
 
    Veri ambarlarında ise partitioning hem yönetim tarafında hem performans tarafında oldukça önemli bir araç. Sorguları hızlandırma konusunda indeks kullanmaktan çok daha iyi sonuçlar verir partitioning. Ayrıca veri ambarları paralel çalıştırma yapmaya da müsait sistemlerdir.
+    
+    
+    
+Peki ne zaman partitioning yapılmalı:
+- 2GB'dan büyük tablolar her zaman partitioning için aday tablo olarak düşünülmeli.
+- Yeni verinin yeni partisyonlara eklendiği, tarihsel veri tutan tablolar
+- Tablodaki verilerin farklı depolama cihazlarına dağıtıldığı sistemler
+    
     
 ### Tablo Partisyon Şemaları    
 
