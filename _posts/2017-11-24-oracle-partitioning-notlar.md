@@ -15,13 +15,13 @@ Bunları biraz daha ayrıntılı inceleyelim şimdi.
 
 
 
-  **1. Erişilebilirlik**
+**1. Erişilebilirlik**
 
    Eğer üzerinde çalışılan tabloda partitioning yapılmışsa, tablo üzerinde herhangi bir sorgu çalıştırılırken optimizasyon mekanizması bunu anlar ve erişilmesine gerek
 olmayan partisyonları sorgu planından çıkarır. O partisyonlarda şayet bir bozukluk varsa bile, plandan çıkarıldıkları için sorgu sorunsuz bir şekilde çalışacaktır.
    İkinci bir senaryo olarak ise elimizde 100GB boyutunda bir tablo ve partitioning yaparak 50 tane 2Gb boyutunda tablolar elde ettiğimizi düşünelim. Olası bir hata durumunda eğer partitioning yapmamışsak 100GB boyutundaki tabloyu düzeltmeye çalışacaz. Diğer durumda ise sorunun meydana geldiği partisyonlardan birini düzeltecez sadece ve bu sistemin çok daha kısa sürede tekrar ayağa kalkmasına olanak sağlayacak. Ayrıca diğer partisyonlar çalışmaya devam edecektir. Dolayısıyla erişilebilirlik artacaktır.
     
-  **2. Yönetim Yükünün Azalması**
+**2. Yönetim Yükünün Azalması**
   
     Veritabanında 10GB index olduğu bir durumu düşünelim. Eğer partition yoksa ve indeksi yeniden oluşturmamız gerekiyorsa bunu tek seferde yapmak
 zorundayız ve en az 10GB boş alanımız olması gerekir. Ama 1GB lık partisyonlar halinde saklasaydık bu indeksi, öncekinin %10 u kadar bir alan yeterli olacaktı. Ayrıca bu şekilde işlem çok daha hızlı sonuçlanacaktır. 
@@ -35,7 +35,7 @@ kısaca şu kadar:
    - Bu tabloyu partisyonlu tabloya ALTER TABLE EXCHANGE PARTITION komutuyla hızlıca ekle.
    - Eski partisyonu at
     
-  **3. Sorgu Performansı**
+**3. Sorgu Performansfı**
     
    2 türlü iyileştirme sağlanabilir: Partisyon eleme ve paralel çalıştırma ancak bu iyileştirmeler sistemden sisteme değişkenlik gösterir.OLTP sistemlerde partitioning büyük performans artışları sağlamadığı gibi bazen negatif etki de yapabilir. Geleneksel OLTP sistemlerinde sonuçların anlık olarak dönmesi    beklenir ve geri dönen değerler oldukça küçük indeks aralıklarından taranarak getirilmiştir. Büyük objelerde full scan yapılmadığı için partisyon anlamsızlaşıyor.(partisyon büyük parçaların full scan yapılmasını gereksiz kılıyordu) Partisyonların paralel çalıştırma avantajı da burada geçersiz çünkü oltp sistemlerde kaynaklar başka işler için saklanmalı. Ayrıca zaten hızlı indeks erişimleri sorguyu hızlıca döndürecek şekilde tasarlanmıştır OLTP'de.
 
