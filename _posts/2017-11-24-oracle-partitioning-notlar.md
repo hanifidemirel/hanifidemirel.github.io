@@ -62,7 +62,7 @@ Peki ne zaman partitioning yapılmalı:
     
     
     
-    
+  Örnek kodlar ve daha detay bilgiler için Expert Oracle Database Architecture kitabına bakabilirsiniz.
     
     
     
