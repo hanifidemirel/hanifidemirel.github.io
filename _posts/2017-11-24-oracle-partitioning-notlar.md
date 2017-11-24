@@ -3,7 +3,6 @@ layout: post
 published: true
 title: Oracle Partitioning Notları
 date: '2017-11-24'
-subtitle: Partitioning
 ---
 ## Genel Bakış
 
