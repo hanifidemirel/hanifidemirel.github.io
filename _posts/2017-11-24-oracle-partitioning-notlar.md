@@ -23,7 +23,7 @@ olmayan partisyonları sorgu planından çıkarır. O partisyonlarda şayet bir 
     
 **2. Yönetim Yükünün Azalması**
   
-    Veritabanında 10GB index olduğu bir durumu düşünelim. Eğer partition yoksa ve indeksi yeniden oluşturmamız gerekiyorsa bunu tek seferde yapmak
+   Veritabanında 10GB index olduğu bir durumu düşünelim. Eğer partition yoksa ve indeksi yeniden oluşturmamız gerekiyorsa bunu tek seferde yapmak
 zorundayız ve en az 10GB boş alanımız olması gerekir. Ama 1GB lık partisyonlar halinde saklasaydık bu indeksi, öncekinin %10 u kadar bir alan yeterli olacaktı. Ayrıca bu şekilde işlem çok daha hızlı sonuçlanacaktır. 
 Diğer bir avantaj da olası bir çökme durumunda en fazla %10 luk bir efor kaybımız olacaktır ve dolayısıyla sil baştan başlamak zorunda kalmayacağız.
 
@@ -35,7 +35,7 @@ kısaca şu kadar:
    - Bu tabloyu partisyonlu tabloya ALTER TABLE EXCHANGE PARTITION komutuyla hızlıca ekle.
    - Eski partisyonu at
     
-**3. Sorgu Performansfı**
+**3. Sorgu Performansı**
     
    2 türlü iyileştirme sağlanabilir: Partisyon eleme ve paralel çalıştırma ancak bu iyileştirmeler sistemden sisteme değişkenlik gösterir.OLTP sistemlerde partitioning büyük performans artışları sağlamadığı gibi bazen negatif etki de yapabilir. Geleneksel OLTP sistemlerinde sonuçların anlık olarak dönmesi    beklenir ve geri dönen değerler oldukça küçük indeks aralıklarından taranarak getirilmiştir. Büyük objelerde full scan yapılmadığı için partisyon anlamsızlaşıyor.(partisyon büyük parçaların full scan yapılmasını gereksiz kılıyordu) Partisyonların paralel çalıştırma avantajı da burada geçersiz çünkü oltp sistemlerde kaynaklar başka işler için saklanmalı. Ayrıca zaten hızlı indeks erişimleri sorguyu hızlıca döndürecek şekilde tasarlanmıştır OLTP'de.
 
